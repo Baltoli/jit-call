@@ -175,3 +175,5 @@ tags
 .vim
 
 # End of https://www.gitignore.io/api/c,git,vim,c++,linux,macos,cmake
+
+build/
