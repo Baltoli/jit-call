@@ -6,3 +6,13 @@ project(JITCall CXX)
 cmake_policy(SET CMP0025 NEW)
 
 set(CMAKE_CXX_STANDARD 17)
+
+if(JITCALL_TEST)
+  enable_testing()
+
+  add_executable(jitcall-unit
+    test/main.cpp)
+
+  add_test(NAME jitcall-unit
+           COMMAND $<TARGET_FILE:jitcall-unit>)
+endif()
