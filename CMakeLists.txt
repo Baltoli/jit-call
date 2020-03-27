@@ -45,6 +45,7 @@ if(JITCALL_TEST)
   enable_testing()
 
   add_executable(jitcall-unit
+    test/load_module.cpp
     test/util.cpp
     test/main.cpp)
 
