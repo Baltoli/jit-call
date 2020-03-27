@@ -45,6 +45,7 @@ if(JITCALL_TEST)
   enable_testing()
 
   add_executable(jitcall-unit
+    test/util.cpp
     test/main.cpp)
 
   target_link_libraries(jitcall-unit
