@@ -1,3 +1,4 @@
 #pragma once
 
-namespace jitcall {}
+#include <jitcall/context.h>
+#include <jitcall/wrapper.h>

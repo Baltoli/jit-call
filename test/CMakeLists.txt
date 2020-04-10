@@ -1,6 +1,7 @@
 include(CompileBitcode)
 
 add_executable(jitcall-unit
+  src/wrapper.cpp
   src/load_module.cpp
   src/util.cpp
   src/main.cpp)
