@@ -7,12 +7,25 @@
 using namespace jitcall;
 using namespace jitcall::test;
 
-TEST_CASE("Can construct a wrapper for a function") {
+namespace {
+
+Wrapper addWrapper() {
   auto mod = loadNamedInput("add");
   REQUIRE(mod);
 
   auto func = mod->getFunction("add");
   REQUIRE(func);
 
-  auto wrap = Wrapper(func);
+  return Wrapper(func);
+}
+
+} // namespace
+
+TEST_CASE("Can construct a wrapper") { auto wrap = addWrapper(); }
+
+TEST_CASE("Can call a simple function", "[!shouldfail]") {
+  auto wrap = addWrapper();
+  auto ret = wrap(4, 5).as<int>();
+
+  REQUIRE(ret == 9);
 }
