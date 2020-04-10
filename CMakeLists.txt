@@ -50,7 +50,7 @@ if(JITCALL_TEST)
     test/main.cpp)
 
   target_compile_definitions(jitcall-unit PRIVATE
-    INPUT_DIR="${CMAKE_CURRENT_SOURCE_DIR}/test/inputs")
+    INPUT_DIR="${CMAKE_CURRENT_SOURCE_DIR}/test/inputs/")
 
   target_link_libraries(jitcall-unit
     jitcall)
