@@ -1,5 +1,7 @@
 #pragma once
 
+#include <jitcall/Bits.h>
+
 #include <llvm/ADT/None.h>
 #include <llvm/ADT/Optional.h>
 
@@ -26,7 +28,7 @@ private:
 template <typename T>
 llvm::Optional<T> Result::as() const {
   if (size() == sizeof(T)) {
-    return T{};
+    return makeFromBytes<T>(Data.data());
   } else {
     return llvm::None;
   }
