@@ -47,5 +47,6 @@ install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(EXPORT JITCallConfig DESTINATION share/JITCall/cmake)
 
 if(JITCALL_TEST)
+  enable_testing()
   add_subdirectory(test)
 endif()

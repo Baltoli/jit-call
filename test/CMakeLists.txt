@@ -16,5 +16,13 @@ target_compile_definitions(jitcall-unit PRIVATE
 target_link_libraries(jitcall-unit
   jitcall)
 
+function(add_test_example name)
+  compile_bitcode(
+    INPUT  "${CMAKE_CURRENT_SOURCE_DIR}/inputs/${name}.c"
+    OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${name}.bc")
+endfunction()
+
+add_test_example(basic)
+
 add_test(NAME jitcall-unit
          COMMAND $<TARGET_FILE:jitcall-unit>)
