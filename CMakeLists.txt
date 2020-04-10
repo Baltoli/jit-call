@@ -42,19 +42,5 @@ install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(EXPORT JITCallConfig DESTINATION share/JITCall/cmake)
 
 if(JITCALL_TEST)
-  enable_testing()
-
-  add_executable(jitcall-unit
-    test/load_module.cpp
-    test/util.cpp
-    test/main.cpp)
-
-  target_compile_definitions(jitcall-unit PRIVATE
-    INPUT_DIR="${CMAKE_CURRENT_SOURCE_DIR}/test/inputs/")
-
-  target_link_libraries(jitcall-unit
-    jitcall)
-
-  add_test(NAME jitcall-unit
-           COMMAND $<TARGET_FILE:jitcall-unit>)
+  add_subdirectory(test)
 endif()
