@@ -15,4 +15,7 @@ TEST_CASE("Can interpret Result data constructed by hand") {
   auto int_val = res.as<int>();
   REQUIRE(int_val);
   REQUIRE(*int_val == 0x04030201);
+
+  auto float_val = res.as<float>();
+  REQUIRE(float_val);
 }
