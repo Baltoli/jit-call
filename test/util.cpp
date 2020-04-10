@@ -11,7 +11,7 @@ using namespace llvm;
 namespace jitcall {
 namespace test {
 
-std::unique_ptr<Module> LoadModule(std::string const &path) {
+std::unique_ptr<Module> loadModule(std::string const &path) {
   auto &ctx = ThreadContext::get();
   auto err = SMDiagnostic{};
 

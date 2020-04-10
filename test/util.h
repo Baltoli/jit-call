@@ -7,7 +7,7 @@
 namespace jitcall {
 namespace test {
 
-std::unique_ptr<llvm::Module> LoadModule(std::string const &path);
+std::unique_ptr<llvm::Module> loadModule(std::string const &path);
 
 } // namespace test
 } // namespace jitcall

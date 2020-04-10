@@ -4,6 +4,9 @@
 
 #include <iostream>
 
+using namespace jitcall::test;
+
 TEST_CASE("Can load IR files into test cases") {
-  std::cout << INPUT_DIR << '\n';
+  auto mod = loadModule(INPUT_DIR "/empty.ll");
+  REQUIRE(mod);
 }
