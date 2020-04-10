@@ -5,7 +5,7 @@ project(JITCall CXX)
 # Use AppleClang to identify the default compiler on MacOS (rather than Clang)
 cmake_policy(SET CMP0025 NEW)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 14)
 
 find_package(LLVM 10 REQUIRED CONFIG)
 add_definitions(${LLVM_DEFINITIONS})

@@ -4,7 +4,6 @@
 
 #include <iostream>
 
-TEST_CASE("Can load IR files into test cases")
-{
+TEST_CASE("Can load IR files into test cases") {
   std::cout << INPUT_DIR << '\n';
 }
