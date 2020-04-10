@@ -1,7 +1,7 @@
 #pragma once
 
-#include <llvm/ADT/APInt.h>
 #include <llvm/ADT/None.h>
+#include <llvm/ADT/Optional.h>
 
 #include <vector>
 
@@ -11,15 +11,20 @@ class Result {
 public:
   explicit Result(size_t size);
 
-  template <typename T> llvm::Optional<T> as() const;
+  template <typename T>
+  llvm::Optional<T> as() const;
 
   size_t size() const;
+
+  std::vector<uint8_t> const &data() const;
+  uint8_t *rawData();
 
 private:
   std::vector<uint8_t> Data;
 };
 
-template <typename T> llvm::Optional<T> Result::as() const {
+template <typename T>
+llvm::Optional<T> Result::as() const {
   if (size() == sizeof(T)) {
     return T{};
   } else {
