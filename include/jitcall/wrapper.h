@@ -17,7 +17,7 @@ private:
 };
 
 template <typename... Ts> Result Wrapper::operator()(Ts... args) {
-  return Result{};
+  return Result(0);
 }
 
 } // namespace jitcall

@@ -23,6 +23,7 @@ llvm_map_components_to_libnames(llvm_libs
   core x86utils x86info support)
 
 add_library(jitcall
+  src/Result.cpp
   src/Wrapper.cpp
   src/Context.cpp)
 

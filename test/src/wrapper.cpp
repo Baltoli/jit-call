@@ -27,5 +27,6 @@ TEST_CASE("Can call a simple function", "[!shouldfail]") {
   auto wrap = addWrapper();
   auto ret = wrap(4, 5).as<int>();
 
-  REQUIRE(ret == 9);
+  REQUIRE(ret);
+  REQUIRE(*ret == 9);
 }
