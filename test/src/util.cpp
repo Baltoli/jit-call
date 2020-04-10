@@ -18,5 +18,9 @@ std::unique_ptr<Module> loadModule(std::string const &path) {
   return parseIRFile(path, err, ctx);
 }
 
+std::unique_ptr<Module> loadNamedInput(std::string const &name) {
+  return loadModule(INPUT_DIR + name + ".bc");
+}
+
 } // namespace test
 } // namespace jitcall
