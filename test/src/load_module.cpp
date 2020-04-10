@@ -4,18 +4,16 @@
 
 #include <iostream>
 
-#define INPUT(fn) INPUT_DIR #fn ".bc"
-
 using namespace jitcall::test;
 
 TEST_CASE("Can load IR files into test cases") {
   SECTION("Empty IR file") {
-    auto mod = loadModule(INPUT(empty));
+    auto mod = loadNamedInput("empty");
     REQUIRE(mod);
   }
 
   SECTION("Non-empty bitcode file") {
-    auto mod = loadModule(INPUT(yneg));
+    auto mod = loadNamedInput("yneg");
     REQUIRE(mod);
     REQUIRE(mod->getFunction("func"));
   }
