@@ -21,6 +21,7 @@ function(add_test_example name)
     OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${name}.bc")
 endfunction()
 
+add_test_example(add)
 add_test_example(empty)
 add_test_example(yneg)
 

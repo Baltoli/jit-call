@@ -1,0 +1,9 @@
+#include <jitcall/wrapper.h>
+
+using namespace llvm;
+
+namespace jitcall {
+
+Wrapper::Wrapper(Function *impl) : Impl(impl) {}
+
+} // namespace jitcall
