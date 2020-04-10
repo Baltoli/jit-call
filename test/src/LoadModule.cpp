@@ -1,6 +1,6 @@
-#include "util.h"
+#include "Util.h"
 
-#include <vendor/catch.h>
+#include <vendor/Catch.h>
 
 #include <iostream>
 

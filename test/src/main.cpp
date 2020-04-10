@@ -1,2 +1,2 @@
 #define CATCH_CONFIG_MAIN
-#include <vendor/catch.h>
+#include <vendor/Catch.h>

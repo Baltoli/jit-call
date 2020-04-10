@@ -1,5 +1,7 @@
 #pragma once
 
+#include <jitcall/Result.h>
+
 #include <llvm/IR/Function.h>
 
 namespace jitcall {

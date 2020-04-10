@@ -1,6 +1,6 @@
-#include "util.h"
+#include "Util.h"
 
-#include <jitcall/context.h>
+#include <jitcall/Context.h>
 
 #include <llvm/IRReader/IRReader.h>
 #include <llvm/Support/MemoryBuffer.h>

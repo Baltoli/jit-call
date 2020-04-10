@@ -1,8 +1,8 @@
-#include "util.h"
+#include "Util.h"
 
-#include <jitcall/wrapper.h>
+#include <jitcall/Wrapper.h>
 
-#include <vendor/catch.h>
+#include <vendor/Catch.h>
 
 using namespace jitcall;
 using namespace jitcall::test;
