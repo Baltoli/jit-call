@@ -23,6 +23,7 @@ function(add_test_example name)
 endfunction()
 
 add_test_example(add)
+add_test_example(longadd)
 add_test_example(empty)
 add_test_example(yneg)
 
