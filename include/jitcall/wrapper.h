@@ -3,6 +3,8 @@
 #include <jitcall/Result.h>
 
 #include <llvm/IR/Function.h>
+#include <llvm/IR/LLVMContext.h>
+#include <llvm/IR/Module.h>
 
 namespace jitcall {
 
@@ -14,6 +16,9 @@ public:
   Result operator()(Ts...);
 
 private:
+  llvm::Module *module();
+  llvm::LLVMContext &context();
+
   llvm::Function *Impl;
 };
 
