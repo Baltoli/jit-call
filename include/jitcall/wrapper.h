@@ -2,6 +2,7 @@
 
 #include <jitcall/Result.h>
 
+#include <llvm/IR/DataLayout.h>
 #include <llvm/IR/Function.h>
 #include <llvm/IR/LLVMContext.h>
 #include <llvm/IR/Module.h>
@@ -17,6 +18,7 @@ public:
 
 private:
   llvm::Module *module();
+  llvm::DataLayout getDataLayout();
   llvm::LLVMContext &context();
 
   llvm::Function *Impl;
