@@ -29,7 +29,10 @@ private:
 
 template <typename... Ts>
 Result Wrapper::operator()(Ts... args) {
-  return Result(0);
+  auto ret_ty = Impl->getFunctionType()->getReturnType();
+  auto result = Result(getTypeSize(ret_ty));
+
+  return result;
 }
 
 } // namespace jitcall

@@ -20,6 +20,8 @@ LLVMContext &Wrapper::context() const {
 }
 
 TypeSize Wrapper::getTypeSize(llvm::Type *ty) const {
+  // TODO: handle other types that LLVM doesn't want to size but we need to for
+  // regularity (e.g. void).
   return getDataLayout().getTypeStoreSize(ty);
 }
 
