@@ -6,6 +6,7 @@
 #include <llvm/IR/Function.h>
 #include <llvm/IR/LLVMContext.h>
 #include <llvm/IR/Module.h>
+#include <llvm/Support/TypeSize.h>
 
 namespace jitcall {
 
@@ -17,9 +18,11 @@ public:
   Result operator()(Ts...);
 
 private:
-  llvm::Module *module();
-  llvm::DataLayout getDataLayout();
-  llvm::LLVMContext &context();
+  llvm::Module *module() const;
+  llvm::DataLayout getDataLayout() const;
+  llvm::LLVMContext &context() const;
+
+  llvm::TypeSize getTypeSize(llvm::Type *) const;
 
   llvm::Function *Impl;
 };
