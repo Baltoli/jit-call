@@ -2,7 +2,10 @@
 
 #include <vendor/Catch.h>
 
+#include <iostream>
+
 using namespace jitcall;
+using namespace Catch::literals;
 
 TEST_CASE("Can interpret Result data constructed by hand") {
   auto res = Result(4);
@@ -18,4 +21,5 @@ TEST_CASE("Can interpret Result data constructed by hand") {
 
   auto float_val = res.as<float>();
   REQUIRE(float_val);
+  REQUIRE(*float_val == 1.54e-36_a);
 }
