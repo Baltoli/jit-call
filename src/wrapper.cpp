@@ -7,6 +7,12 @@ namespace jitcall {
 Wrapper::Wrapper(Function *impl) : Impl(impl) {
 }
 
+Wrapper::~Wrapper() {
+  if (Trampoline) {
+    Trampoline->eraseFromParent();
+  }
+}
+
 Module *Wrapper::module() const {
   return Impl->getParent();
 }

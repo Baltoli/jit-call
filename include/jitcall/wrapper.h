@@ -13,6 +13,7 @@ namespace jitcall {
 class Wrapper {
 public:
   Wrapper(llvm::Function *func);
+  ~Wrapper();
 
   template <typename... Ts>
   Result operator()(Ts...);
@@ -25,6 +26,7 @@ private:
   llvm::TypeSize getTypeSize(llvm::Type *) const;
 
   llvm::Function *Impl;
+  llvm::Function *Trampoline;
 };
 
 template <typename... Ts>
